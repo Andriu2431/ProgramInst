@@ -9,20 +9,23 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
+    @IBOutlet weak var imageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+createImageView()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func createImageView() {
+        //Заокруглення кутів
+        imageView.layer.cornerRadius = imageView.frame.size.height / 2
+        //обрізає все що виступає за рамки заокруглених кутів
+        imageView.layer.masksToBounds = true
+        //Обводка нашої фото
+        imageView.layer.borderWidth = 5
+        //колір обводки
+        let borderColor = UIColor.yellow
+        //присвоюємо цей колір
+        imageView.layer.borderColor = borderColor.cgColor
     }
-    */
-
 }
